@@ -31,7 +31,7 @@ def checkanswers(userlist : list, originallist : list, metric: int):
         originalvec.append(customtrans.siamese(originallist[i], max_length=128))
 
     for i in range(len(uservec)):
-        distance = customtrans.distance(uservec[i], originallist[i])
+        distance = customtrans.distance(uservec[i], originalvec[i])
         
         if distance > metric:
             boollist.append(False)
@@ -44,9 +44,9 @@ def checkanswers(userlist : list, originallist : list, metric: int):
                 count += 1
 
         if count < len(boollist)/2:
-            return "Summerize"
+            return False
         
-    return "Next question"
+    return True
 
 
 
