@@ -35,9 +35,9 @@ async def create_upload_file(file: UploadFile = File(...), UID: str = File(...))
 #     return True
 
 
-@app.get("/check/")
+@app.("/check/")
 async def checkans(user_ans: list, corr_ans: list):
-    pass
+    return {"state": checkanswers(user_ans, corr_ans, 7)}
 
 
 @app.get("/question/")
