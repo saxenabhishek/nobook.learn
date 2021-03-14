@@ -9,8 +9,13 @@ const Nav = () => (
         </span>
       </div>
       <div className="mx-2 my-12">
-        <span className=" text-gray-700 rounded-3xl border-2 py-2 px-5 border-gray-200">
+        <span className=" text-gray-700 rounded-3xl  py-2 px-5 ">
           <a href="/">Home</a>
+        </span>
+      </div>
+      <div className="mx-2 my-12">
+        <span className=" text-gray-700 rounded-3xl border-2 py-2 px-5 border-gray-200">
+          <a href="/dash">Dashboard</a>
         </span>
       </div>
     </div>
