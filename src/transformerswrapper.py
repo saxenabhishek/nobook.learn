@@ -1,4 +1,4 @@
-from transformers import pipeline
+from transformers import pipeline, set_seed
 from transformers import AutoTokenizer, AutoModel
 import torch
 from .question_generation.pipelines import secondary_pipeline
@@ -12,6 +12,9 @@ class CustomTransformer():
         self.textsummeryModel = None
         self.modelsiamese = None
         self.questiongenerationmodel = None
+        self.extrapolation = None
+      
+
     def summerizer(self, text, max_length=20, min_length=5):
         if self.textsummeryModel == None:
             self.textsummeryModel = pipeline('summarization')
@@ -53,6 +56,15 @@ class CustomTransformer():
     
 
         return self.questiongenerationmodel(context)
+
+    def generateText(self, text : str, max_length : int):
+        if self.extrapolation == None:
+            self.extrapolation = pipeline('text-generation', model='gpt2')
+            set_seed(69)
+
+        return self.extrapolation(text,  max_length=max_length)
+            
+
     
 if __name__ == '__main__':
     transformers = CustomTransformer()
