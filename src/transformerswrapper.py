@@ -62,8 +62,12 @@ and first released in 1991, Python's design philosophy emphasizes code
 readability with its notable use of significant whitespace.
     '''
     # print(transformers.summerizer(text=text))
+    text1 = '''
+   Python is an interpreted, high-level, general-purpose programming language.
+   It was created by Guido van Rossum and released in 1991.
+        '''
 
 
-    # print(transformers.siamese(text=text, max_length=12))
+
     # print(transformers.questionAnswer(context=context, question=question))
 
