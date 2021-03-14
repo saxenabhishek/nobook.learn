@@ -5,7 +5,7 @@ const Nav = () => (
     <div className="flex ">
       <div className="ml-20 my-10">
         <span className=" text-indigo-600 font-extrabold text-3xl rounded-3xl py-2 px-5 ">
-          <a href="/">Title</a>
+          <a href="/">NoBook.learn</a>
         </span>
       </div>
       <div className="mx-2 my-12">

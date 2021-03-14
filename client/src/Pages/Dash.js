@@ -11,8 +11,16 @@ const Dash = () => {
         <h1 className="text-2xl mx-2 mb-10 text-center tracking-tight font-extrabold text-gray-600 sm:text-5xl md:text-6xl">
           DashBoard
         </h1>
-        <div className=" p-5 flex flex-col lg:flex-row  justify-center items-center lg:h-96 my-40 md:-mx-4">
+        <p class="text-2xl text-center font-bold m-5 bg-indigo-100 lg:mx-96">
+              Your detailed Perfomance Analysis
+            </p>
+        <div className=" p-5 flex flex-col lg:flex-row  justify-center items-center lg:h-96 my-40 md:-mx-4 bg-">
+        <div>
+        <p class="text-lg text-center font-bold m-5">
+              Yearly Perfomance Analysis
+            </p>
           <Chartt />
+        </div>
           <div className="my-5 mx-10">
             <p class="text-lg text-center font-bold m-5">
               Past Perfomance Analysis
