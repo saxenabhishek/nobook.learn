@@ -46,7 +46,7 @@ const Sign = () => {
             ></input>
             <div className="mt-5 sm:mt-8 sm:flex justify-center">
               <div className="rounded-md shadow">
-                <a href="/start">
+                <a href="/start2">
                   <button className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
                     Submit
                   </button>

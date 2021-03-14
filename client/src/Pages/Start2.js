@@ -1,20 +1,24 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import Footer from "../Components/Footer";
 import "react-toastify/dist/ReactToastify.css";
 import Nav from "../Components/Navbar";
-import Question from "../Components/Question";
+import Question2 from "../Components/Question2";
 import Summary from "../Components/Summary";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import { v4 as uuidv4 } from 'uuid';
 
-const Start = () => {
+const Start2 = () => {
   const [ques, setQuestion] = useState(false);
+  const [quesnext, setQuestionnext] = useState(false);
   const [uploader, setUpload] = useState(true);
   const [summary, setSummary] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [loading2, setLoading2] = useState(false);
   const [file, setFile] = useState(null);
-  const [question, setQues] = useState({main:[{"question":"what is cell?"}]});
+  const [question1, setQues1] = useState('Loading...');
+  const [question2, setQues2] = useState('Loading...');
+  const [summarytext, setSummaryText] = useState(false);
 
   const error = () =>
     toast.error("Oops! There was some error. Please try again", {
@@ -27,7 +31,7 @@ const Start = () => {
       progress: undefined,
     });
   const success = () =>
-    toast.success("Wohoo! Your Questions are here", {
+    toast.info("Wait, Your Question will be here soon", {
       position: "top-right",
       autoClose: 4995,
       hideProgressBar: false,
@@ -50,9 +54,23 @@ const Start = () => {
     axios
     .get(`http://127.0.0.1:8000/question/?UID=${newid}`) 
     .then(async(res) => {
-    console.log(res.data.main)
-    setQues(res.data.main)
+    console.log(res.data.main[0].question)
+    setQues1(res.data.main[0].question)
+    setQues2(res.data.main[1].question)
+    setLoading2(false);
+    })
+    .catch((err) => {
+      console.log(err)
+    });
+  }
 
+  const getSummary =()=>{
+    axios
+    .get(`http://127.0.0.1:8000/summary/?UID=${newid}`) 
+    .then(async(res) => {
+    console.log(res.data.sum[0].generated_text)
+ setSummaryText(res.data.sum[0].generated_text)
+    setLoading2(false);
     })
     .catch((err) => {
       console.log(err)
@@ -74,7 +92,8 @@ const Start = () => {
         await setLoading(false);
         await setUpload(false);
         await setQuestion(true);     
-        await getQues();    
+        await getQues();  
+        await getSummary();  
       })
       .catch((err) => {
         error();      
@@ -172,56 +191,32 @@ const Start = () => {
           </div>
         </div>
 
+      { loading2 ? <h1 className="text-6xl font-extrabold">Loading....</h1>
 
- {question &&(  
-<div className={`${ques ? "block" : "hidden"}`}>
-
-  <div className="flex flex-col">
-{ question.map((q) => (
-<Question
-             ques={`${q?.question}`}
-          
-      />
-      ))}
-
-              <button
-                onClick={() => {
-                    setSummary(true);
-                    setQuestion(false)
-         }} 
-                className="flex mx-28 items-center p-3 justify-center border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
-              >
-                Next
-              </button>
-         
-</div>
-
-</div>
-)}  
+      : <Question2 ques={`${question1}`}
+          class={`${ques ? "block" : "hidden"}`}
+          btn={() => {
+            setSummary(false);
+            setQuestionnext(true);
+            setQuestion(false)
+          }}
+        />
+      
+}
+<Question2
+             ques={`${question2}`}
+          class={`${quesnext ? "block" : "hidden"}`}
+          btn={() => {
+            setSummary(true);
+            setQuestionnext(false);
+ }}        />
         <Summary
           btn={() => {
-       setQuestion(true)
+            setQuestionnext(true);
             setSummary(false);
           }}
           class={`${summary ? "block" : "hidden"}`}
-          desc="A cell is the structural and fundamental unit of life. The study of
-            cells from its basic structure to the functions of every cell
-            organelle is called Cell Biology. Robert Hooke was the first
-            Biologist who discovered cells. All organisms are made up of cells.
-            They may be made up of a single cell (unicellular), or many cells
-            (multicellular). Mycoplasmas are the smallest known cells. Cells are
-            the building blocks of all living beings. They provide structure to
-            the body and convert the nutrients taken from the food into energy.
-            Cells are complex and their components perform various functions in
-            an organism. They are of different shapes and sizes, pretty much
-            like bricks of the buildings. Our body is made up of cells of
-            different shapes and sizes. Cells are the lowest level of
-            organisation in every life form. From organism to organism, the
-            count of cells may vary. Humans have the number of cells compared to
-            that of bacteria. Cells comprise several cell organelles that
-            perform specialised functions to carry out life processes. Every
-            organelle has a specific structure. The hereditary material of the
-            organisms is also present in the cells."
+          desc={`${summarytext}`}
         />
           
       </div>
@@ -241,4 +236,4 @@ const Start = () => {
   );
 };
 
-export default Start;
+export default Start2;
