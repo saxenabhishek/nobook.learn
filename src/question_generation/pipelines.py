@@ -298,7 +298,7 @@ SUPPORTED_TASKS = {
     }
 }
 
-def pipeline(
+def secondary_pipeline(
     task: str,
     model: Optional = None,
     tokenizer: Optional[Union[str, PreTrainedTokenizer]] = None,

@@ -1,7 +1,8 @@
 from transformers import pipeline
 from transformers import AutoTokenizer, AutoModel
 import torch
-from src.question_generation.pipelines import pipeline
+from .question_generation.pipelines import secondary_pipeline
+import numpy as np 
 
 class CustomTransformer():
 
@@ -16,10 +17,10 @@ class CustomTransformer():
             self.textsummeryModel = pipeline('summarization')
         return self.textsummeryModel(text, max_length=max_length, min_length=min_length)
 
-    def questionAnswer(self, context, question):
-        if self.questionmodel == None:
-            self.questionmodel = pipeline("question-answering")
-        return self.questionmodel(question=question, context=context)
+    # def questionAnswer(self, context, question):
+    #     if self.questionmodel == None:
+    #         self.questionmodel = pipeline("question-answering")
+    #     return self.questionmodel(question=question, context=context)
 
 
     def mean_pooling(self, model_output, attention_mask):
@@ -43,10 +44,12 @@ class CustomTransformer():
         
         return sentence_embeddings
 
+    def distance(self, vec1, vec2):
+        return np.linalg.norm(vec1 - vec2)
 
     def questionGeneration(self, context):
         if self.questiongenerationmodel == None:
-            self.questiongenerationmodel = pipeline('question-generation')
+            self.questiongenerationmodel = secondary_pipeline('question-generation')
     
 
         return self.questiongenerationmodel(context)
@@ -58,7 +61,9 @@ if __name__ == '__main__':
 and first released in 1991, Python's design philosophy emphasizes code 
 readability with its notable use of significant whitespace.
     '''
-    print(transformers.questionGeneration(context=text))
+    # print(transformers.summerizer(text=text))
+
+
     # print(transformers.siamese(text=text, max_length=12))
     # print(transformers.questionAnswer(context=context, question=question))
 
