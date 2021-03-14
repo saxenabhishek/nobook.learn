@@ -34,10 +34,10 @@ async def create_upload_file(file: UploadFile = File(...), UID: str = File(...))
 
 #     return True
 
+
 @app.get("/check/")
-async def 
-
-
+async def checkans(user_ans: list, corr_ans: list):
+    pass
 
 
 @app.get("/question/")
@@ -71,20 +71,22 @@ async def sendquestions(UID: str):
 
     return {"state": False, "main": [*que_ans]}
 
+
 @app.post("/summary/")
-async def summary(iteration : int, UID : str):
+async def summary(iteration: int, UID: str):
     db = TinyDB("db.json")
     q = Query()
     res = db.search(q.uid == UID)[0]
     text = res["Alltext"][db.search(q.uid == UID)[0]["k"]]["text"]
-    
-    if iteration>2:
+
+    if iteration > 2:
         return {"state": False}
 
-    summarized = simpler_question_answers(text)
-    db.update({"text": summarized }, q.uid == UID)
-    
-    return summarized
+    print(text)
+    summarized = simpler_question_answers(text, min_length=15, max_length=20)
+    print(summarized)
+    db.update({"text": summarized}, q.uid == UID)
+    return {"sum": summarized}
 
 
 @app.get("/")
