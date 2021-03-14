@@ -8,6 +8,10 @@ db.json
 # C extensions
 *.so
 
+#client
+node_modules
+.DS_Store
+
 # Distribution / packaging
 .Python
 build/
