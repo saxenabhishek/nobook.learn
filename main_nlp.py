@@ -15,37 +15,17 @@ def question_answers(text: str):
     return contents
 
 
-def checkanswers(userlist: list, originallist: list, metric: int):
-
+def checkanswers(userAns: str, originalAns: str, metric: int):
     """
     returns a boolenn value 
 
     """
+    uservec = customtrans.siamese(userAns, max_length=128)
+    originalvec = customtrans.siamese(originalAns, max_length=128)
 
-    uservec = []
-    originalvec = []
-    boollist = []
-    count = 0
-
-    for i in range(len(userlist)):
-        uservec.append(customtrans.siamese(userlist[i], max_length=128))
-        originalvec.append(customtrans.siamese(originallist[i], max_length=128))
-
-    for i in range(len(uservec)):
-        distance = customtrans.distance(uservec[i], originalvec[i])
-
-        if distance > metric:
-            boollist.append(False)
-
-        else:
-            boollist.append(True)
-
-        for i in boollist:
-            if i == True:
-                count += 1
-
-        if count < len(boollist) / 2:
-            return False
+    distance = customtrans.distance(uservec, originalvec)
+    if distance > metric:
+        return False
 
     return True
 
@@ -59,7 +39,8 @@ def simpler_question_answers(text: str, max_length: int, min_length: int):
     easytext = customtrans.summerizer(text, max_length=max_length, min_length=min_length)
     return easytext[0]["summary_text"]
 
-def generateText(text: str, max_length : int):
+
+def generateText(text: str, max_length: int):
     return customtrans.generateText(text, max_length=max_length)
 
 

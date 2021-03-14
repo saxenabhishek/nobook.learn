@@ -36,7 +36,7 @@ async def create_upload_file(file: UploadFile = File(...), UID: str = File(...))
 
 
 @app.post("/check/")
-async def checkans(user_ans: list = File(...), corr_ans: list = File(...)):
+async def checkans(user_ans: str = File(...), corr_ans: str = File(...)):
     return {"state": checkanswers(user_ans, corr_ans, 7)}
 
 
@@ -44,6 +44,9 @@ async def checkans(user_ans: list = File(...), corr_ans: list = File(...)):
 async def sendquestions(UID: str):
     db = TinyDB("db.json")
     q = Query()
+    res = db.search(q.uid == UID)
+    if len(res) == 0:
+        return {"state": False, "main": []}
     res = db.search(q.uid == UID)[0]
     length = len(res["Alltext"])
     if length <= res["k"]:
@@ -72,22 +75,28 @@ async def sendquestions(UID: str):
     return {"state": False, "main": [*que_ans]}
 
 
-@app.post("/summary/")
-async def summary(iteration: int, UID: str):
+@app.get("/summary/")
+async def summary(UID: str):
     db = TinyDB("db.json")
     q = Query()
     res = db.search(q.uid == UID)[0]
     text = res["Alltext"][db.search(q.uid == UID)[0]["k"]]["text"]
 
-    if iteration > 2:
-        return {"state": False}
+    original_length = len(text.split(" ")) + 1
 
-    print(text)
-    summarized = simpler_question_answers(text, min_length=15, max_length=20)
-    if len(summarized) < 10:
-        summarized = generateText(summarized, max_length=20)
+    print("ORIGINAL LENGHT:", original_length)
+
+    min_length = int(original_length * 0.5)
+    max_length = int(original_length * 0.7)
+
+    summarized = simpler_question_answers(text, min_length=min_length, max_length=max_length)
+    print("LENGTH SUMMARIZED:", len(summarized.split(" ")) + 1)
     print(summarized)
-    db.update({"text": summarized}, q.uid == UID)
+    summarized = generateText(summarized, max_length=int(max_length * 1.1))
+    print(summarized)
+    print("LENGTH after gpt: ", len(summarized[0]["generated_text"]))
+    db.update({"text": summarized[0]["generated_text"]}, q.uid == UID)
+
     return {"sum": summarized}
 
 
