@@ -61,10 +61,10 @@ Preview
 
 <td>
 
-Aaradhya Tripathi
+Aradhya Tripathi
 
 <p align="center">
-<img src = "https://avatars.githubusercontent.com/sakshi-choudhary"  height="120" alt="Rusali Saha">
+<img src = "https://avatars.githubusercontent.com/Aradhya-Tripathi"  height="120" alt="Rusali Saha">
 </p>
 <p align="center">
 <a href = "https://github.com/sakshi-choudhary"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
