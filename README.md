@@ -28,14 +28,15 @@ Preview
 ##### ML :
 
   1.	Deep Learning
-  2.	LSTMs
-  3.	Recurrent Neural Networks
+  2.  Transformers
   4.	Natural Language Processing
   5.	NLTK
   6.	Scikit-Learn
-  7.	Tensorflow
-  8.  Decision Trees
-  9.  Pandas
+  7.	Pytorch
+  8.  Rake
+  9.  OCR
+  
+  
 
 ##### Frontend Tech Stack :
 
@@ -47,7 +48,7 @@ Preview
 
 1. Python
 2. FastAPI
- 
+3. Uvicorn
 
 
   
