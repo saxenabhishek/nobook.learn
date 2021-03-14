@@ -19,6 +19,121 @@ Preview
 ![](https://cdn.discordapp.com/attachments/816371216214392892/820738943934005248/Screenshot_2021-03-15_at_00.48.23.png)
 ![](https://cdn.discordapp.com/attachments/816371216214392892/820737060800430130/Screenshot_2021-03-15_at_00.40.55.png)
 
+## **Tech Stack:**
+
+<hr>
+
+
+##### ML :
+
+  1.	Deep Learning
+  2.	LSTMs
+  3.	Recurrent Neural Networks
+  4.	Natural Language Processing
+  5.	NLTK
+  6.	Scikit-Learn
+  7.	Tensorflow
+  8.  Decision Trees
+  9.  Pandas
+
+##### Frontend Tech Stack :
+
+1. ReactJs
+2. ChartJs
+3. Tailwind CSS
+
+##### Backend Tech Stack :
+
+1. Python
+2. FastAPI
+ 
+
+
+  
+  
+  ## Contributors
+
+<table>
+<tr align="center">
+
+
+
+
+<td>
+
+Aaradhya Tripathi
+
+<p align="center">
+<img src = "https://avatars.githubusercontent.com/sakshi-choudhary"  height="120" alt="Rusali Saha">
+</p>
+<p align="center">
+<a href = "https://github.com/sakshi-choudhary"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+<a href = "https://www.linkedin.com/in/sakshichoudhary23/">
+<img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
+</a>
+</p>
+</td>
+
+<td>
+
+Sakshi Choudhary
+
+<p align="center">
+<img src = "https://avatars.githubusercontent.com/sakshi-choudhary"  height="120" alt="Rusali Saha">
+</p>
+<p align="center">
+<a href = "https://github.com/sakshi-choudhary"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+<a href = "https://www.linkedin.com/in/sakshichoudhary23/">
+<img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
+</a>
+</p>
+</td>
+
+<td>
+
+Abhishek Saxena
+
+<p align="center">
+<img src = "https://avatars.githubusercontent.com/saxenabhishek"  height="120" alt="Rusali Saha">
+</p>
+<p align="center">
+<a href = "https://github.com/sakshi-choudhary"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+<a href = "https://www.linkedin.com/in/sakshichoudhary23/">
+<img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
+</a>
+</p>
+</td>
+
+<td>
+
+Nitish Chaturvedi
+
+<p align="center">
+<img src = "https://avatars.githubusercontent.com/waterupto"  height="120" alt="person">
+</p>
+<p align="center">
+<a href = "https://github.com/sakshi-choudhary"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+<a href = "https://www.linkedin.com/in/sakshichoudhary23/">
+<img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
+</a>
+</p>
+</td>
+
+
+
+
+
+
+  </table>
+</tr>
+  </table>
+  
+  <p align="center">
+  
+   [![ForTheBadge built-by-developers](http://ForTheBadge.com/images/badges/built-by-developers.svg)](https://github.com/saxenabhishek/MonPrix/)
+
+   </p>
+
 <p align="center">
 crafted with <span style="color: #8b0000;">&hearts;</span> by team <b>async-await</b>
 </p>
