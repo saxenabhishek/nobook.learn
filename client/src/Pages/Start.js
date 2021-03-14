@@ -12,8 +12,9 @@ const Start = () => {
   const [ques, setQuestion] = useState(false);
   const [uploader, setUpload] = useState(true);
   const [summary, setSummary] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [file, setFile] = useState(null);
-  const [show, setShow] = useState(false);
+
 
   const error = () =>
     toast.error("Oops! There was some error. Please try again", {
@@ -26,7 +27,7 @@ const Start = () => {
       progress: undefined,
     });
   const success = () =>
-    toast.success("Yasss! Posted sucessfully", {
+    toast.success("Wohoo! Your Questions are here", {
       position: "top-right",
       autoClose: 4995,
       hideProgressBar: false,
@@ -34,7 +35,9 @@ const Start = () => {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-    });
+    })
+    
+    ;
 
   function handleSelect(event) {
     setFile(event.target.files[0]);
@@ -47,12 +50,16 @@ const Start = () => {
     const formData = new FormData();
     formData.append("UID", `${newid}`);
     formData.append("file", file);
+    setLoading(true)
 
     axios
       .post("http://127.0.0.1:8000/uploadfile/", formData)
-      .then((res) => {
-        success();
-        setShow(true);
+      
+      .then(async(res) => {
+        await success();
+        await setUpload(false);
+        await setQuestion(true);     
+        await setLoading(false)
       })
       .catch((err) => {
         error();
@@ -102,7 +109,10 @@ const Start = () => {
                     />
                   </label>
                 )}
-                {file && <img src={`/${file.name}`} alt="img" />}
+                {file &&   <span className="text-gray-700 font-extrabold text-2xl">
+                     
+                        {file.name}
+                      </span>}
               </div>
               {file && (
                 <div>
@@ -110,7 +120,7 @@ const Start = () => {
                     <div className="flex flex-col px-3 py-2">
                       <span className="text-gray-800 font-semibold">
                         {" "}
-                        {file.name}
+                        {file.type}
                       </span>
 
                       <span className="text-gray-800 py-1">
@@ -126,32 +136,12 @@ const Start = () => {
                     type="submit"
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
                   >
-                    Submit
+                  {loading?'Loading...':"Submit"}  
                   </button>
                 </div>
               </div>
-              <div
-                className={`${
-                  show ? "block" : "hidden"
-                }`}
-              >
-              <div
-                className='mt-5 sm:mt-8 sm:flex sm:justify-center hidden'
-              >
-                <div className="rounded-md shadow">
-                  <button
-                    type="submit"
-               onClick={() => {
-                setQuestion(true);
-                setUpload(false);
-              }}
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
-                  >
-                    Let's Go
-                  </button>
-                </div>
-                </div>
-              </div>
+              
+               
             </form>
           </div>
         </div>
