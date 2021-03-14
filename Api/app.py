@@ -88,11 +88,12 @@ async def summary(UID: str):
 
     min_length = int(original_length * 0.5)
     max_length = int(original_length * 0.7)
-
+    print(text)
     summarized = simpler_question_answers(text, min_length=min_length, max_length=max_length)
     print("LENGTH SUMMARIZED:", len(summarized.split(" ")) + 1)
     print(summarized)
-    summarized = generateText(summarized, max_length=int(max_length * 1.1))
+
+    # summarized = generateText(summarized, max_length=int(max_length * 1.1))
     print(summarized)
     print("LENGTH after gpt: ", len(summarized[0]["generated_text"]))
     db.update({"text": summarized[0]["generated_text"]}, q.uid == UID)
