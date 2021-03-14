@@ -59,6 +59,9 @@ def simpler_question_answers(text: str, max_length: int, min_length: int):
     easytext = customtrans.summerizer(text, max_length=max_length, min_length=min_length)
      return easytext[0]["summary_text"]
 
+def generateText(text: str, max_length : int):
+    return customtrans.generateText(text, max_length=max_length)
+
 
 if __name__ == "__main__":
 
