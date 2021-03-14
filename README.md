@@ -8,7 +8,7 @@ It is often a tedious process to read through a large piece of literature where 
 
 System Design
 ---
-![](https://app.conceptboard.com/show/a556-yo1x-czg2-66th-zy0t/a1643b44-6467-4fbc-b9b2-2d9299212606.snap)
+![](https://cdn.discordapp.com/attachments/816371216214392892/816671568155115560/Interactive_learning.png)
 
 Preview
 ----
