@@ -57,6 +57,21 @@ async def sendquestions(UID: str):
 
     return {"state": False, "main": [*que_ans]}
 
+@app.post("/summary/")
+async def summary(iteration : int, UID : str):
+    db = TinyDB("db.json")
+    q = Query()
+    res = db.search(q.uid == UID)[0]
+    text = res["Alltext"][db.search(q.uid == UID)[0]["k"]]["text"]
+    
+    if iteration>2:
+        return {"state": False}
+
+    summarized = simpler_question_answers(text)
+    db.update({"text": summarized }, q.uid == UID)
+    
+    return summarized
+
 
 @app.get("/")
 async def read_item():
