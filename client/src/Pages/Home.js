@@ -18,7 +18,7 @@ const Home = () => {
               >
                 <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
                   <div className="flex items-center justify-between w-full md:w-auto">
-                    <span className="sr-only">Lorem Ipsum</span>
+                    <span className="sr-only">NoBook.learn</span>
                 
                     <div className="-mr-2 flex items-center md:hidden">
                       <button
@@ -51,7 +51,7 @@ const Home = () => {
                 <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
                   <a
                     href="/"
-                    className="font-medium text-gray-500 hover:text-gray-900"
+                    className="text-indigo-600 font-extrabold text-3xl rounded-3xl py-2 pr-5"
                   >
                     NoBook.learn
                   </a>

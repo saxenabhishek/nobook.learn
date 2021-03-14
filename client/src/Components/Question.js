@@ -1,12 +1,23 @@
 import React from "react";
 
 const Question = (props) => {
+    const[repbtn,setRepBtn]=React.useState('Report')
   return (
     <>
       <div
         className={`${props.class} p-5 flex justify-center items-center h-96 my-44 md:-mx-4`}
       >
+       
+    
         <div className="flex flex-col justify-center">
+
+              <button
+                onClick={()=>{setRepBtn('Reported')}}
+                className="w-20 mb-5 focus:outline-none focus:bg-red-800 flex items-center justify-center px-5 border border-transparent text-base font-medium rounded-md text-white bg-red-500 hover:bg-red-800 "
+              >
+                {repbtn}
+              </button>
+         
           <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
             {props.ques}
           </h1>
