@@ -20,5 +20,5 @@ Preview
 ![](https://cdn.discordapp.com/attachments/816371216214392892/820737060800430130/Screenshot_2021-03-15_at_00.40.55.png)
 
 <p align="center">
-crafted with <span style="color: #8b0000;">&hearts;</span> by <b>async-await</b>
+crafted with <span style="color: #8b0000;">&hearts;</span> by team <b>async-await</b>
 </p>
