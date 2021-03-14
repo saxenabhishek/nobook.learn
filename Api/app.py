@@ -84,6 +84,8 @@ async def summary(iteration: int, UID: str):
 
     print(text)
     summarized = simpler_question_answers(text, min_length=15, max_length=20)
+    if len(summarized) < 10:
+        summarized = generateText(summarized, max_length=20)
     print(summarized)
     db.update({"text": summarized}, q.uid == UID)
     return {"sum": summarized}
