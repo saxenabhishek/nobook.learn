@@ -5,7 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
-
+.eslintcache
 #client
 node_modules
 .DS_Store

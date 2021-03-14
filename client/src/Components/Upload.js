@@ -35,7 +35,7 @@ const Upload = (props) => {
   const submitFile = (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append("UniqueID", Math.random() * 100);
+    formData.append("UID", `${Math.random() * 100}`);
     formData.append("file", file);
 
     axios
@@ -43,6 +43,7 @@ const Upload = (props) => {
       .then((res) => {
         success();
         setShow(true);
+       
       })
       .catch((err) => {
         error();
@@ -121,7 +122,7 @@ const Upload = (props) => {
                 <div className="rounded-md shadow">
                   <button
                     type="submit"
-                    onClick={props.btn}
+               
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
                   >
                     Let's Go
