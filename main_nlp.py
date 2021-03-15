@@ -53,9 +53,4 @@ if __name__ == "__main__":
         Every event can be assigned four numbers representing its time and position (the event's coordinates). 
         However, the numerical values are different for different observers. 
         """
-
-    # text2 = """Refraction is the bending of a wave when it enters a medium where its speed is different. The refraction of light when it passes from a fast medium to a slow medium bends the light ray toward the normal to the boundary between the two media. Refraction is responsible for image formation by lenses and the eye."""
-    # text2 = "1. INTRODUCTION"
-    # print(text1)
-    # print(question_answers(text1))
     print(checkanswers("physical nature of time is addressed by general ", "physical time is addressed by your mom", 7))

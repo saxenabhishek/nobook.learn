@@ -20,11 +20,6 @@ class CustomTransformer():
             self.textsummeryModel = pipeline('summarization')
         return self.textsummeryModel(text, max_length=max_length, min_length=min_length)
 
-    # def questionAnswer(self, context, question):
-    #     if self.questionmodel == None:
-    #         self.questionmodel = pipeline("question-answering")
-    #     return self.questionmodel(question=question, context=context)
-
 
     def mean_pooling(self, model_output, attention_mask):
         token_embeddings = model_output[0]
@@ -73,13 +68,7 @@ if __name__ == '__main__':
 and first released in 1991, Python's design philosophy emphasizes code 
 readability with its notable use of significant whitespace.
     '''
-    # print(transformers.summerizer(text=text))
     text1 = '''
    Python is an interpreted, high-level, general-purpose programming language.
    It was created by Guido van Rossum and released in 1991.
         '''
-
-
-
-    # print(transformers.questionAnswer(context=context, question=question))
-
