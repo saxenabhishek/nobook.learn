@@ -4,11 +4,22 @@
 
 Introduction 
 ---
-It is often a tedious process to read through a large piece of literature where the true agenda is hidden deep in the text. Hence, we 'NoBook.learn' make learning more interactive by continuously iterating through simplified versions of the same literature and evaluating along the way through interactive questions. We have made two-interfaces, one in which we allow the user to upload the literature of their choice and another where we ask interactive questions based on that. 
+It is often a tedious process to read through a large piece of literature where the true agenda is hidden deep in the text. Hence, we 'NoBook.learn' make learning more interactive by continuously iterating through simplified versions of the same literature and evaluating along the way through interactive questions. We have have two-interfaces, one in which we allow the user to upload the literature of their choice and another where we ask interactive questions based on that. 
 
 System Design
 ---
 ![](https://cdn.discordapp.com/attachments/816371216214392892/816671568155115560/Interactive_learning.png)
+
+
+Novelty of Solution
+---
+<ul>
+<li>Our core solution can adapt to learners' pace; We provide an easy-to-use web app for curious learners.</li>
+ <li>We can extract the content from any image of pages given by the user.</li>
+ <li>We constantly evaluate our learners through pop quizzes.</li>
+ <li>We use an AI mechanism to check users' answers and generate appropriate reading material if they are not up to the mark.</li>
+ <li>We do not depend on a source of questions, as we can develop them for any topic using AI.</li>
+ </ul>
 
 Preview
 ----
