@@ -18,7 +18,7 @@ const Start2 = () => {
   const [file, setFile] = useState(null);
   const [question1, setQues1] = useState('Loading...');
   const [question2, setQues2] = useState('Loading...');
-  const [summarytext, setSummaryText] = useState(false);
+  const [summarytext, setSummaryText] = useState('Loading...');
 
   const error = () =>
     toast.error("Oops! There was some error. Please try again", {
@@ -203,13 +203,18 @@ const Start2 = () => {
         />
       
 }
+<div>
 <Question2
-             ques={`${question2}`}
+          ques={`${question2}`}
           class={`${quesnext ? "block" : "hidden"}`}
           btn={() => {
             setSummary(true);
             setQuestionnext(false);
  }}        />
+<div className="flex justify-center items-center -mt-40 mb-28">
+<a className="text-transparent " href='/result'>res</a>
+</div>
+</div>
         <Summary
           btn={() => {
             setQuestionnext(true);

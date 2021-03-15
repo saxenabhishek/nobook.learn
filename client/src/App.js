@@ -6,6 +6,7 @@ import Start2 from "./Pages/Start2";
 import Sign from "./Pages/Sign";
 import Login from "./Pages/Login";
 import Dash from "./Pages/Dash";
+import Result from "./Pages/Result";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/login" exact render={() => <Login />} />
         <Route path="/dash" exact render={() => <Dash />} />
         <Route path="/start2" exact render={() => <Start2 />} />
+        <Route path="/result" exact render={() => <Result />} />
       </Switch>
     </Router>
   );
