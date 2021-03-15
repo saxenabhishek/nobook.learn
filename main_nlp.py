@@ -24,6 +24,7 @@ def checkanswers(userAns: str, originalAns: str, metric: int):
     originalvec = customtrans.siamese(originalAns, max_length=128)
 
     distance = customtrans.distance(uservec, originalvec)
+    print(distance)
     if distance > metric:
         return False
 
@@ -55,5 +56,6 @@ if __name__ == "__main__":
 
     # text2 = """Refraction is the bending of a wave when it enters a medium where its speed is different. The refraction of light when it passes from a fast medium to a slow medium bends the light ray toward the normal to the boundary between the two media. Refraction is responsible for image formation by lenses and the eye."""
     # text2 = "1. INTRODUCTION"
-    print(text1)
-    print(question_answers(text1))
+    # print(text1)
+    # print(question_answers(text1))
+    print(checkanswers("physical nature of time is addressed by general ", "physical time is addressed by your mom", 7))

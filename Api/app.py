@@ -80,7 +80,7 @@ async def summary(UID: str):
     db = TinyDB("db.json")
     q = Query()
     res = db.search(q.uid == UID)[0]
-    text = res["Alltext"][db.search(q.uid == UID)[0]["k"]]["text"]
+    text = res["Alltext"][db.search(q.uid == UID)[0]["k"] - 1]["text"]
 
     original_length = len(text.split(" ")) + 1
 
@@ -93,7 +93,7 @@ async def summary(UID: str):
     print("LENGTH SUMMARIZED:", len(summarized.split(" ")) + 1)
     print(summarized)
 
-    # summarized = generateText(summarized, max_length=int(max_length * 1.1))
+    summarized = generateText(summarized, max_length=int(max_length * 1.1))
     print(summarized)
     print("LENGTH after gpt: ", len(summarized[0]["generated_text"]))
     db.update({"text": summarized[0]["generated_text"]}, q.uid == UID)
