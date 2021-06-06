@@ -122,11 +122,11 @@ Abhishek Saxena
 Nitish Chaturvedi
 
 <p align="center">
-<img src = "https://avatars.githubusercontent.com/waterupto"  height="120" alt="person">
+<img src = "https://avatars.githubusercontent.com/u/85406812?v=4"  height="120" alt="person">
 </p>
 <p align="center">
-<a href = "https://github.com/waterupto"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
-<a href = "https://www.linkedin.com/in/waterupto/">
+<a href = "https://github.com/nastyphantom"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+<a href = "https://www.linkedin.com/in/nitishc0409/">
 <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
 </a>
 </p>
