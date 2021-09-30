@@ -39,20 +39,20 @@ Preview
 ##### ML :
 
   1.	Deep Learning
-  2.  Transformers
-  4.	Natural Language Processing
-  5.	NLTK
+  2.	Natural Language Processing
+  3. Transformers
+  3.	NLTK
   6.	Scikit-Learn
-  7.	Pytorch
-  8.  Rake
-  9.  OCR
+  7.	PyTorch
+  8. Rake
+  9. OCR (Object Character Recognition)
   
   
 
 ##### Frontend Tech Stack :
 
-1. ReactJs
-2. ChartJs
+1. ReactJS
+2. ChartJS
 3. Tailwind CSS
 
 ##### Backend Tech Stack :
