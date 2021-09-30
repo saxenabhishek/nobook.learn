@@ -4,7 +4,7 @@
 
 Introduction 
 ---
-It is often a tedious process to read through a large piece of literature where the true agenda is hidden deep in the text. Hence, we 'NoBook.learn' make learning more interactive by continuously iterating through simplified versions of the same literature and evaluating along the way through interactive questions. We have have two-interfaces, one in which we allow the user to upload the literature of their choice and another where we ask interactive questions based on that. 
+It is often a tedious process to read through a large piece of literature where the true agenda is hidden deep in the text. Hence, we 'NoBook.learn' make learning more interactive by continuously iterating through simplified versions of the same literature and evaluating along the way through interactive questions. We have have two-interfaces, one in which we allow the user to upload the literature of their choice and another where we ask interactive questions based on that. Implemented GPT-3 for textual processing and made the backend in FastAPI.
 
 System Design
 ---
